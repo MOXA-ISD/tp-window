@@ -1,0 +1,167 @@
+$phone-media:480px;
+
+@mixin pc-width() {
+  @media all and (min-width: $phone-media) {
+    @content;
+  }
+}
+
+@mixin phone-width() {
+  @media all and (max-width: $phone-media) {
+    @content;
+  }
+}
+
+header {
+  display: flex;
+  background-color: #413E4A;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 200;
+  font-size: 1.2em;
+  border-bottom: 2px solid #ED4A6A;
+  padding: 1em 1em;
+  p {
+    margin: 0;
+  }
+
+  .logo{
+    display: inline-block;
+    font-size: 0.5em;
+    padding: 0.5em 1em;
+    background-color: #ED4A6A;
+    border-radius: 20px;
+    margin-right: 0.5em;
+  }
+
+  .lang {
+    font-size: 12px;
+    .container {
+      cursor: pointer;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 10px;
+      margin: 0 10px;
+    }
+    .container:hover, .actived {
+      background-color: #ED4A6A;
+    }
+  }
+}
+
+h1 {
+  display: flex;
+}
+
+h1,h2 {
+  font-size: 1.2em;
+  font-weight: 200;
+  @include phone-width {
+    font-size: 1em;
+    text-align: center;
+  }
+}
+
+h3 {
+  font-weight: 200;
+  font-size: 1.1em;
+  color: #707070;
+  padding-top: 1.2em;
+}
+
+h2 {
+  padding: 0.5em 0;
+  color: #ED4A6A;
+}
+
+main{
+  @include pc-width {
+    width: 60%;
+  }
+
+  @include phone-width {
+    width: 95%;
+  }
+
+  margin: auto;
+  padding: 1.0em 0;
+}
+
+.message {
+  height: 40px;
+  .icon {
+    background-color: #413E4A;
+    color: white;
+    padding: 3px;
+  }
+  .icon::after {
+    content: "";
+    position: absolute;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid  #413E4A;
+  }
+  .text {
+    text-indent: 15px;
+    display: inline-block;
+    line-height: 30px;
+    color: #413E4A;
+  }
+}
+
+.items-pool {
+  .item {
+    display: inline-flex;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid #ED4A6A;
+
+    .icon {
+      padding: 5px 5px;
+      width: 18px;
+      height: 18px;
+      font-size: 18px;
+      background-color: white;
+      color: #ED4A6A;
+    }
+    .text {
+      box-shadow:inset 0px 45px 0px -30px rgba(255,255,255,.2);
+      font-size: 0.85em;
+      padding: 5px 25px;
+      width: 100%;
+      text-align: center;
+      background-color: #ED4A6A;
+      color: white;
+    }
+  }
+}
+
+
+
+.items-container {
+  border-top: 2px dashed rgba(0,0,0,.1);
+  .item {
+    display: inline-flex;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid #424254;
+
+    .icon {
+      padding: 5px 5px;
+      width: 18px;
+      height: 18px;
+      font-size: 18px;
+      background-color: white;
+      color: #424254;
+    }
+    .text {
+      box-shadow:inset 0px 45px 0px -30px rgba(255,255,255,.2);
+      font-size: 0.85em;
+      padding: 5px 25px;
+      width: 100%;
+      text-align: center;
+      background-color: #424254;
+      color: white;
+    }
+  }
+}

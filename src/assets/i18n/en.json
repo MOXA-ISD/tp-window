@@ -1,0 +1,21 @@
+{
+	"DEMO.DEMO": "Component Demo",
+	"DEMO.BUTTON.LOADING": "Toggle Loading",
+	"DEMO.FEATURES": "Component features",
+	"DEMO.FEATURES.FEEDBACK": "1. Item click feedback",
+	"DEMO.FEATURES.FEEDBACK.DESC": "You will get a callback as users click any links on the toolbar.",
+	"DEMO.FEATURES.FEEDBACK.CLICKED": "2. Change the title",
+	"DEMO.FEATURES.TITLE": "Change the title",
+	"DEMO.FEATURES.TITLE.DESC": "Change the title of window to your preferred name.",
+	"DEMO.FEATURES.TYPES": "3. Add different states with three types",
+	"DEMO.FEATURES.TYPES.BUTTON": "Show the icon on the tool bar without any content page.",
+	"DEMO.FEATURES.TYPES.STATE": "Show the icon on the tool bar with a content page.",
+	"DEMO.FEATURES.TYPES.CONTENT": "Show a content page without any icon.",
+	"DEMO.FEATURES.DESC": "When there are too many states on the toolbar, the states with button type will be fixed on the toolbar, the rest states will be sorted to a menu.",
+	"DEMO.FEATURES.NUMBER": "Change the max number of state sorting",
+	"DEMO.FEATURES.NUMBER.DESC": "Change the max number will help component to determine when should sort states.",
+	"DEMO.FEATURES.CUSTOMIZE": "Add customized actions on the toolbar bar",
+	"DEMO.FEATURES.CUSTOMIZE.DESC": "By using <strong>CdkPortal</strong>, you can add your actions on the toolbar.",
+	"DEMO.FEATURES.LOADING": "Observable loading bar",
+	"DEMO.FEATURES.LOADING.DESC": "Provide loading effect if you need to use async request."
+}

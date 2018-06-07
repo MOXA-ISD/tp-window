@@ -1,0 +1,57 @@
+<header>
+  <h1><span class="logo">ThingsPro</span> Window Component</h1>
+  <div style="flex: 1;"></div>
+  <div class="lang">
+    <span class="container en" [class.actived]="_currentLang === 'en'" (click)="changeLang('en')">English</span>
+    <span class="container tw" [class.actived]="_currentLang === 'tw'" (click)="changeLang('tw')">中文</span></div>
+</header>
+<p class="mat-body-1" *cdkPortal>Additional Info</p>
+<main [@fadeInOut]>
+  <h2>{{ 'DEMO.DEMO' | translate}}</h2>
+  <tp-window [name]="title.value" maxStateNumber="3" [loading]="loadingObservable" [optionPortal]="portal" (stateChange)="onStateChange($event)">
+    <tp-window-state *ngFor="let item of _selectedItems" [name]="item.name" [icon]="item.icon" [type]="item.type">
+      <p>{{item.content}}</p>
+    </tp-window-state>
+  </tp-window>
+  <button mat-raised-button (click)="testLoading()" style="float: right; margin-top: 10px;">{{ 'DEMO.BUTTON.LOADING' | translate}}</button>
+  <div style="margin-top: 2.5em;" (dragover)="onDragOver($event)" (drop)="onDropItem($event)">
+    <h2>{{ 'DEMO.FEATURES' | translate}}</h2>
+    <h3>{{ 'DEMO.FEATURES.FEEDBACK' | translate}}</h3>
+    <p>{{ 'DEMO.FEATURES.FEEDBACK.DESC' | translate}}</p>
+    <div class="message">
+      <div [@fadeInOut] *ngIf="clickedState" style="display: flex;vertical-align: middle;">
+        <mat-icon class="icon">{{clickedState.icon}}</mat-icon>
+        <span class="text">{{clickedState.name}} {{ 'DEMO.FEATURES.FEEDBACK.CLICKED' | translate}}</span>
+      </div>
+    </div>
+    <h3>{{ 'DEMO.FEATURES.TITLE' | translate}}</h3>
+    <p>{{ 'DEMO.FEATURES.TITLE.DESC' | translate}}</p>
+    <input type="text" [(ngModel)]="_title" #title style=" line-height: 25px; border-radius:  5px; border: 1px solid #ccc; padding:  3px; width: 300px;">
+    <h3>{{ 'DEMO.FEATURES.TYPES' | translate}}<strong>Button</strong>/<strong>State</strong>/<strong>Content</strong></h3>
+    <p><strong>Button</strong>: {{ 'DEMO.FEATURES.TYPES.BUTTON' | translate}}</p>
+    <p><strong>State</strong>: {{ 'DEMO.FEATURES.TYPES.STATE' | translate}}</p>
+    <p><strong>Content</strong>: {{ 'DEMO.FEATURES.TYPES.CONTENT' | translate}}</p>
+    <p>{{ 'DEMO.FEATURES.DESC' | translate}}</p>
+    <div class="items-pool">
+      <div class="item" *ngFor="let item of _items" class="item" draggable="true"
+      (dragstart)="onDragStart($event, item, false)" (dragend)="onDragEnd($event)">
+        <mat-icon class="icon">{{item.icon}}</mat-icon>
+        <span class="text">{{item.name}}</span>
+    </div>
+    </div>
+    <div class="items-container" (dragenter)="onDragEnter($event)"
+      (dragleave)="onDragLeave($event)">
+      <span class="item" *ngFor="let item of _selectedItems" class="item"  draggable="true"
+      (dragstart)="onDragStart($event, item, true)" (dragend)="onDragEnd($event)">
+        <mat-icon class="icon">{{item.icon}}</mat-icon>
+        <span class="text">{{item.name}}</span>
+      </span>
+    </div>
+    <h3>{{ 'DEMO.FEATURES.NUMBER' | translate}}</h3>
+    <p>{{ 'DEMO.FEATURES.NUMBER.DESC' | translate}}</p>
+    <h3>{{ 'DEMO.FEATURES.CUSTOMIZE' | translate}}</h3>
+    <p [innerHTML]="'DEMO.FEATURES.CUSTOMIZE.DESC' | translate"></p>
+    <h3>{{ 'DEMO.FEATURES.LOADING' | translate}}</h3>
+    <p>{{ 'DEMO.FEATURES.LOADING.DESC' | translate}}</p>
+  </div>
+</main>

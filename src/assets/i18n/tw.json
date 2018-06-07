@@ -1,0 +1,21 @@
+{
+	"DEMO.DEMO": "Component 範例",
+	"DEMO.BUTTON.LOADING": "顯示讀取條",
+	"DEMO.FEATURES": "Component 功能說明",
+	"DEMO.FEATURES.FEEDBACK": "一、點擊回饋",
+	"DEMO.FEATURES.FEEDBACK.DESC": "可以接收當前使用者所點擊的按鈕",
+	"DEMO.FEATURES.FEEDBACK.CLICKED": "已點擊",
+	"DEMO.FEATURES.TITLE": "二、修改視窗標題",
+	"DEMO.FEATURES.TITLE.DESC": "修改成適合的視窗標題",
+	"DEMO.FEATURES.TYPES": "三、增加不同類型的頁面狀態",
+	"DEMO.FEATURES.TYPES.BUTTON": "顯示圖示按鈕但是沒有內容頁面",
+	"DEMO.FEATURES.TYPES.STATE": "顯示圖示按鈕並且有頁面可以呈現",
+	"DEMO.FEATURES.TYPES.CONTENT": "顯示頁面是沒有按鈕",
+	"DEMO.FEATURES.DESC": "透過不同類型的頁面狀態，可以有不同的頁面顯示效果",
+	"DEMO.FEATURES.NUMBER": "四、設定按鈕的顯示數量",
+	"DEMO.FEATURES.NUMBER.DESC": "如果按鈕數量超過顯示數量的上限，則會把按鈕整理到 Menu 列表中",
+	"DEMO.FEATURES.CUSTOMIZE": "五、客製化工具列的內容",
+	"DEMO.FEATURES.CUSTOMIZE.DESC": "使用 <strong>CdkPortal</strong> 可以在上方工具列中加入想要的資訊或按鈕",
+	"DEMO.FEATURES.LOADING": "六、顯示讀取條",
+	"DEMO.FEATURES.LOADING.DESC": "可用於從網路讀取資料"
+}

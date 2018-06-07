@@ -1,0 +1,41 @@
+<div class="tp-window">
+  <mat-toolbar>
+    <p class="mat-body-2 toolbar-title">{{name}}</p>
+    <div class="toolbar-flex"></div>
+      <ng-template [cdkPortalOutlet]="optionPortal"></ng-template>
+      <ng-template [ngIf]="states.length <= maxStateNumber">
+        <ng-container *ngFor="let state of states">
+          <button *ngIf="state.type !== 'Content'" mat-icon-button (click)="navigate(state)" matTooltip="{{state.name}}">
+            <mat-icon>{{state.icon}}</mat-icon>
+          </button>
+        </ng-container>
+      </ng-template>
+
+      <ng-template [ngIf]="states.length > maxStateNumber">
+        <ng-container *ngFor="let state of states">
+          <button *ngIf="state.type === 'Button'" mat-icon-button (click)="navigate(state)" matTooltip="{{state.name}}">
+            <mat-icon>{{state.icon}}</mat-icon>
+          </button>
+        </ng-container>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <ng-container *ngFor="let state of states">
+            <button *ngIf="state.type === 'State'" mat-menu-item (click)="navigate(state)">
+              <mat-icon>{{state.icon}}</mat-icon>
+              <span>{{state.name}}</span>
+            </button>
+          </ng-container>
+        </mat-menu>
+      </ng-template>
+
+  </mat-toolbar>
+  <div class="loading">
+    <mat-progress-bar *ngIf="isShowLoading" [@fadeOut]="'in'" mode="indeterminate" color="primary"></mat-progress-bar>
+  </div>
+  <div class="content padding">
+    <div *ngTemplateOutlet="currentState.templateRef"></div>
+  </div>
+  <ng-content></ng-content>
+</div>

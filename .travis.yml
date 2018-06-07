@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '8.9.1'
+dist: trusty
+sudo: required
+addons:
+  chrome: stable
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+install:
+  - npm install
+script:
+  - ng test tp-window --code-coverage
+  - codecov -f coverage/*.json

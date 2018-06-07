@@ -1,0 +1,22 @@
+{
+  "name": "tp-window",
+  "version": "1.0.0",
+  "description": "ThingsPro window component UI",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MOXA-ISD/tp-window.git"
+  },
+  "keywords": [
+    "ThingsPro",
+    "tp-window"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MOXA-ISD/tp-window/issues"
+  },
+  "homepage": "https://github.com/MOXA-ISD/tp-window#tp-window"
+}
